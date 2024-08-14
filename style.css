@@ -1,0 +1,273 @@
+:root{ 
+    
+    --primary-color:#ff0000;
+    --dark-theme:#0F0F0F;
+    --base-font-size: 62.5%
+} 
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    background-color: var(--dark-theme);
+    display: flex;
+    flex-direction: column;
+}
+
+/* header başlangıc */
+header{
+    border-bottom: 1px solid #717171;
+    height: 6rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--dark-theme); 
+}
+
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem;
+    height: 6rem;
+}
+
+.header-left{
+    display: flex;
+    align-items: center;
+    margin-left: 4rem;
+}
+
+.header-left h3{
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    margin-left: 2rem;
+}
+
+header i {
+    font-size: 2rem;
+    color: white;
+}
+
+.header-center{
+    display: flex;
+    align-items: center;
+}
+
+.header-search{
+    border: 1px solid #717171;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    border-radius: 3rem;
+    margin-right: 1.2rem;
+
+
+}
+
+
+.header-search input{
+    background-color: var(--dark-theme);
+    border: none;
+    outline: none;
+}
+
+.header-search #text{
+    color: white;
+}
+
+.header-search .bi-search{
+    font-size: 1.8rem;
+    margin-right: 0.4rem;
+    cursor: pointer;
+}
+
+.header-center .bi-mic{
+    background-color: #909090;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    margin-right: 4rem;
+}
+
+.header-right .bi-bell{
+    position: relative;
+}
+
+.header-right .bi-bell::after{
+    content: "1";
+    background-color:var(--primary-color);
+    color: white;
+    padding: 0.4rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+}
+
+.header-right .avatar{
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.header-right .avatar img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+/* Header Bitiş */
+
+/* content */
+.content{
+    display: flex;
+    margin-top: 6rem;
+}
+/* content */
+
+/* Sidebar başlangıç */
+
+.sidebar{
+    height: 100vh;
+    width: 10rem;
+    border-right:1px solid #717171;
+    padding-top: 2rem;
+    transform: translateX(-20rem);
+    animation: sidebar 1s forwards ease-in;
+}
+
+@keyframes sidebar{
+    to{
+        transform: translateX(0px);
+    }
+}
+
+.sidebar-item{
+    margin-top: 1.5rem;
+}
+
+.sidebar-item a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    transition: .5s ease;
+    margin: 2.5rem;
+    text-align: center;
+    border-radius: 20%;
+}
+
+.sidebar-item a:hover{
+    background-color:#717171
+}
+
+.sidebar i {
+    font-size: 2rem;
+}
+
+.sidebar-item span{
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+
+}
+
+/* sidebar bitiş */
+
+/* videos */
+.videos{
+    margin: 2rem;
+    flex: 1;
+}
+
+.video-list{
+    color: white;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat( auto-fill , minmax(200px,1fr));
+    gap: 0.8rem;
+}
+
+.video-list-item:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.video-image{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.video-image img{
+    width: 100%;
+}
+
+.video-image span{
+    position: absolute;
+    padding: 0 0.4rem;
+    bottom: 0.6rem;
+    right: 0.6rem;
+    background-color: var(--dark-theme);
+    font-size: 1.2rem;
+}
+
+.video-texts{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.4rem;
+    row-gap: 0.6rem;
+}
+
+.video-texts a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.video-texts span{
+    font-size: 1.2rem;
+}
+
+/* media */
+
+@media (max-width: 768px){
+    .header-wrapper{
+        padding: 0 2rem;
+    }
+    
+    .header-center{
+        display: none;
+    }
+
+    .sidebar{
+        display: none;
+    }
+
+    .videos{
+        margin-left: 2rem;
+    }
+    
+}  
